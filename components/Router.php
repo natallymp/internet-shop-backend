@@ -27,13 +27,13 @@ class Router
 		foreach ($this->routes as $uriPattern => $path) {
 
 			if(preg_match("~$uriPattern~", $uri)) {
-				echo '<br> Где ищем (запрос, который набрал пользователь): ' .$uri;
-				echo '<br> Что ищем (совпадения из правила): ' .$uriPattern;
-				echo '<br> Кто обрабатывает: ' .$path;
+				//echo '<br> Где ищем (запрос, который набрал пользователь): ' .$uri;
+				//echo '<br> Что ищем (совпадения из правила): ' .$uriPattern;
+				//echo '<br> Кто обрабатывает: ' .$path;
 
 				$internalRoute = preg_replace("~$uriPattern~", $path, $uri);
 
-				echo '<br><br>Нужно сформировать: '.$internalRoute;
+				//echo '<br><br>Нужно сформировать: '.$internalRoute;
 				$segments = explode('/', $internalRoute);
 
 				$controllerName = array_shift($segments).'Controller';
@@ -41,11 +41,11 @@ class Router
 
 
 				$actionName = 'action'.ucfirst((array_shift($segments)));
-				echo '<br>Класс: '.$controllerName;
-				echo '<br>Метод: '.$actionName;
+				//echo '<br>Класс: '.$controllerName;
+				//echo '<br>Метод: '.$actionName;
 				$parameters = $segments;
 				echo '<pre>';
-				print_r($parameters);
+				//print_r($parameters);
 
 
 

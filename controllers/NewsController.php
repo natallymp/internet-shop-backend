@@ -15,15 +15,15 @@ class NewsController {
 			return true;
 		}
 
-	public function actionView($category, $id) //
+	public function actionView($id) //
 	{ 
 		if ($id) {
-			$newsItem = News::getNewsByItemId($id);
+			$newsItem = News::getNewsItemById($id);
 			echo '<pre>';
 			print_r($newsItem);
 			echo '</pre>';
 
-			echo 'actionView';
+			//echo 'actionView';
 		}
 		
 		return true;
