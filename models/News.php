@@ -2,20 +2,16 @@
 
 class News
 {
+	//require(ROOT.'/components/Db.php');
 	public static function getNewsItemById($id)
 	{
 		//запрос к бд;
 		$id = intval($id);
-
+		
 		if ($id)
 		{
-			$host = 'phpstart';
-			$dbname = 'mvc_site';
-			$user = 'root';
-			$password = '';
-			$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 			
-			
+			$db = Db::getConnection();
 
 			//$db->query("SET wait_timeout=9999;");
 			$result = $db->query('SELECT * from news WHERE id='.$id);
@@ -30,11 +26,8 @@ class News
 	public static function getNewsList()
 	{
 		//запрос к бд;
-		$host = 'phpstart';
-		$dbname = 'mvc_site';
-		$user = 'root';
-		$password = '';
-		$db =  new PDO("mysql:host=$host;dbname=$dbname", $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+		
+		$db = Db::getConnection();
 
 		$newsList = array();
 
