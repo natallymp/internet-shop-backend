@@ -2,7 +2,7 @@
 
 return array(
 	'host' => 'phpstart',
-	'dbname' => 'mvc_site',
+	'dbname' => 'super_mag',
 	'user' => 'root',
 	'password' => '',
 	);
